@@ -20,5 +20,16 @@ cells.forEach((cell) => {
             cell.innerText = "O";
             turnX = true;
         }
+        cell.disabled = true;
     });
 });
+
+const resetGame = () => {
+    cells.forEach(cell => {
+        cell.innerText = "";
+        cell.disabled = false;
+    });
+};
+
+reset.addEventListener("click", resetGame);
+newGame.addEventListener("click", resetGame);
