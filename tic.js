@@ -21,6 +21,7 @@ cells.forEach((cell) => {
             turnX = true;
         }
         cell.disabled = true;
+        checkWinner();
     });
 });
 
@@ -33,3 +34,17 @@ const resetGame = () => {
 
 reset.addEventListener("click", resetGame);
 newGame.addEventListener("click", resetGame);
+
+const checkWinner = () => {
+    for (let pattern of winPattern){
+        let pos1 = cells[pattern[0]].innerText;
+        let pos2 = cells[pattern[1]].innerText;
+        let pos3 = cells[pattern[2]].innerText;
+
+        if (pos1 != "" && pos2 != "" && pos3 != ""){
+            if(pos1 === pos2 && pos2 === pos3){
+                alert("Winner is "+ pos1)
+            }
+        }
+    }
+};
