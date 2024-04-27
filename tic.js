@@ -44,6 +44,10 @@ const checkWinner = () => {
         if (pos1 != "" && pos2 != "" && pos3 != ""){
             if(pos1 === pos2 && pos2 === pos3){
                 alert("Winner is "+ pos1)
+
+                for (let box of cells){
+                    box.disabled = true;
+                }
             }
         }
     }
